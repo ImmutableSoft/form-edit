@@ -32,6 +32,16 @@ export function FormEditToObjectArray(data, endKey)
 	return formData;
 }
 
+export function FormEditToObjectArrayNoHeader(data, endKey)
+{
+    // Delete the form header fields
+    data.delete("formally_name");
+    data.delete("formally_version");
+    data.delete("formally_username");
+
+    return FormEditToObjectArray(data, endKey);
+}
+
 export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk}) =>
 { 
   const [editFields, setEditFields] = useState(initialFields);

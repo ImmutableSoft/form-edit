@@ -1,1 +1,1 @@
-export { FormEdit, FormEditToObjectArray } from "./components/formEdit"
+export { FormEdit, FormEditToObjectArray, FormEditToObjectArrayNoHeader } from "./components/formEdit"
