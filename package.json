@@ -1,6 +1,6 @@
 {
   "name": "@immutablesoft/form-edit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "FormAlly form editor for ReactJS, creates .json definitions for rendering with form-render.",
   "repository": {
     "type": "git",
@@ -21,6 +21,14 @@
   ],
   "author": "ImmutableSoft Inc.",
   "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+      "/dist"
+  ],
   "bugs": {
     "url": "https://github.com/ImmutableSoft/form-edit/issues"
   },
