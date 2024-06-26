@@ -11,14 +11,14 @@
     return(
             <>
               <input 
-                type={field.type}
+                type={field.type === "daterange" ? "date" : field.type}
                 placeholder="Min"
                 name="min"
                 value={field.min} 
                 onChange={(e) => handleFieldChange(e, index)}
               />
               <input 
-                type={field.type}
+                type={field.type === "daterange" ? "date" : field.type}
                 placeholder="Max"
                 name="max"
                 value={field.max} 

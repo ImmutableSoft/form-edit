@@ -8,6 +8,7 @@ import FileEdit from "./fields/FileEdit";
 import SelectEdit from "./fields/SelectEdit";
 import PurchaseEdit from "./fields/PurchaseEdit";
 import CheckboxEdit from "./fields/CheckboxEdit";
+import CaptchaEdit from "./fields/CaptchaEdit";
 
 const FormallyVersion = "1.0";
 
@@ -42,7 +43,7 @@ export function FormEditToObjectArrayNoHeader(data, endKey)
     return FormEditToObjectArray(data, endKey);
 }
 
-export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk}) =>
+export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk, siteKey}) =>
 { 
   const [editFields, setEditFields] = useState(initialFields);
 
@@ -139,6 +140,7 @@ export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk}) =
               <option value="textarea">textarea</option> 
               <option value="datetime-local">datetime</option> 
               <option value="date">date</option> 
+              <option value="daterange">daterange</option> 
               <option value="timestamp">timestamp</option> 
               <option value="email">email</option> 
               <option value="tel">telephone</option> 
@@ -151,7 +153,8 @@ export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk}) =
               <option value="image">image</option> 
               <option value="video">video</option> 
               <option value="signature">signature</option> 
-              <option value="password">password</option> 
+              <option value="password">password</option>
+              <option value="captcha">captcha</option> 
               <option value="stripe">stripe</option> 
               <option value="purchase">purchase</option> 
             </select>
@@ -181,6 +184,9 @@ export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk}) =
               :
               (field.type === 'stripe') ?
                 <StripeEdit params={{field, index, handleFieldChange, stripePk}} />
+              :
+              (field.type === 'captcha') ?
+                <CaptchaEdit params={{field, index, handleFieldChange, siteKey}} />
               :
               (field.type === 'display') ?
                 <DisplayEdit params={{field, index, handleFieldChange}} />
