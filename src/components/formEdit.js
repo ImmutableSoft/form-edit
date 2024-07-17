@@ -9,6 +9,8 @@ import SelectEdit from "./fields/SelectEdit";
 import PurchaseEdit from "./fields/PurchaseEdit";
 import CheckboxEdit from "./fields/CheckboxEdit";
 import CaptchaEdit from "./fields/CaptchaEdit";
+import SourceEdit from "./fields/SourceEdit";
+import QueueEdit from "./fields/QueueEdit";
 
 const FormallyVersion = "1.0";
 
@@ -157,6 +159,8 @@ export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk, si
               <option value="captcha">captcha</option> 
               <option value="stripe">stripe</option> 
               <option value="purchase">purchase</option> 
+              <option value="queue">queue</option> 
+              <option value="source">source</option> 
             </select>
             <input 
               type="text"
@@ -187,6 +191,12 @@ export const FormEdit = ({nameObj, initialFields, handleEditSubmit, stripePk, si
               :
               (field.type === 'captcha') ?
                 <CaptchaEdit params={{field, index, handleFieldChange, siteKey}} />
+              :
+              (field.type === 'source') ?
+                <SourceEdit params={{field, index, handleFieldChange}} />
+              :
+              (field.type === 'queue') ?
+                <QueueEdit params={{field, index, handleFieldChange}} />
               :
               (field.type === 'display') ?
                 <DisplayEdit params={{field, index, handleFieldChange}} />

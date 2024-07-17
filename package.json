@@ -1,6 +1,6 @@
 {
   "name": "@immutablesoft/form-edit",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "FormAlly form editor for ReactJS, creates .json definitions for rendering with form-render.",
   "repository": {
     "type": "git",
